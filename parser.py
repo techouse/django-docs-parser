@@ -13,6 +13,8 @@ DJANGO_VERSIONS = ('2.1', '1.11')
 DJANGO_DOCS_DOWNLOAD_URL = 'https://docs.djangoproject.com/m/docs/django-docs-{version}-en.zip'
 DJANGO_DOCS_URL = 'https://docs.djangoproject.com/en/{version}/'
 
+EXCLUDED_IDS = {'term-', 'allow_migrate-', 'allow_relation-', 'index-'}
+
 
 def parse():
     entries = []
@@ -31,7 +33,7 @@ def parse():
                         href = a.get('href')
                         file, id = href.split('#')
 
-                        if file.startswith('releases/') or id is None:
+                        if file.startswith('releases/') or any(id.startswith(pattern) for pattern in EXCLUDED_IDS):
                             continue
 
                         with zipfile.open(file) as html:
