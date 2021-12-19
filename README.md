@@ -13,7 +13,7 @@ python parser.py
 ```
 
 The above commands will make a virtual environment in a folder called `env` and install all the requirements listed in `requirements.txt` into that virtual environment.
-Once that is done running `python parser.py` will go to the Django documentation for versions __3.1__, __3.0__, __2.2__, __2.1__, __2.0__, __1.11__, __1.10__ and __1.8__, grab their zipped HTML versions and parse them respectively.
+Once that is done running `python parser.py` will go to the Django documentation for versions __4.0__, __3.2__, __3.1__, __3.0__, __2.2__, __2.1__, __2.0__, __1.11__, __1.10__ and __1.8__, grab their zipped HTML versions and parse them respectively.
 It will output a file called `data.json` which you can later use to your avail.
 
 The output JSON file looks like this:
